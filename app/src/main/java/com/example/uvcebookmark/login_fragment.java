@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,9 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  */
 public class login_fragment extends Fragment {
+   private  TextView registerTextView, passwordTextView;
+   private Button loginButton;
+
 
 
 
@@ -30,7 +35,9 @@ public class login_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login_fragment, container, false);
-        final TextView registerTextView = view.findViewById(R.id.new_user_TV);
+        registerTextView = view.findViewById(R.id.new_user_TV);
+        passwordTextView = view.findViewById(R.id.forgot_password_TV);
+        loginButton = view.findViewById(R.id.login_button);
         registerTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +45,7 @@ public class login_fragment extends Fragment {
                 // To register_fragment
             }
         });
-        final TextView passwordTextView = view.findViewById(R.id.forgot_password_TV);
+        passwordTextView = view.findViewById(R.id.forgot_password_TV);
         passwordTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,11 +53,16 @@ public class login_fragment extends Fragment {
                 // To somewhere else
             }
         });
-        final Button loginButton = view.findViewById(R.id.login_button);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+
+        registerTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Fragment registerFragment = new register_fragment();
 
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frame,registerFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
         return view;
@@ -58,4 +70,12 @@ public class login_fragment extends Fragment {
 
     }
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        registerTextView.setTextColor(getResources().getColor(R.color.White));
+        passwordTextView.setTextColor(getResources().getColor(R.color.White));
+
+    }
 }

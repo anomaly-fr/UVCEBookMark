@@ -5,13 +5,11 @@
     <string name="registration_no">Enter registration number:</string>
     <string name="password">Enter password:</string>
     <string name="lets_go">Let\'s Go!</string>
-    <string name="register">New user? <u>Register</u></string>
+    <string name="register"><u>New user? Register</u></string>
     <string name="register_registerFrag">Register:</string>
     <string name="forgot_password"><u>Forgot password?</u></string>
     <string name="name"><u>Name:</u></string>
-
-
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="set_password"><u>Set password:</u></string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="enter_e_mail_address">E-mail ID:</string>
+    <string name="enter_e_mail_address">Contact Number:</string>
 </resources>

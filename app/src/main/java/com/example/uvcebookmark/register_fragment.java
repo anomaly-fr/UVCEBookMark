@@ -39,7 +39,7 @@ public class register_fragment extends Fragment {
 
     Button registeredButton;
     FirebaseFirestore database = FirebaseFirestore.getInstance();
-    DocumentReference reference = database.collection("Users").document("First User");
+    DocumentReference reference ;// database.collection("Users");
     CollectionReference collectionReference = database.collection("Users");
 
 
@@ -144,17 +144,10 @@ public class register_fragment extends Fragment {
         if (newName.equals("") || newContact.equals("") || newRegNo.equals("") || newPassword.equals(""))
             Toast.makeText(getContext(), "Please enter values for all fields", Toast.LENGTH_SHORT).show();
             else{
-                collectionReference.add(user).addOnFailureListener(new OnFailureListener() {
+                reference=collectionReference.document(newRegNo);
+                reference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(), "Failed", Toast.LENGTH_SHORT).show();
-                        Log.d("Register", "onFailure: " + e.toString());
-
-
-                    }
-                }).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
+                    public void onSuccess(Void aVoid) {
                         Toast.makeText(getContext(), "Successful", Toast.LENGTH_SHORT).show();
                         Fragment loginFragment = new login_fragment();
 
@@ -162,9 +155,14 @@ public class register_fragment extends Fragment {
                         fragmentTransaction1.replace(R.id.frame,loginFragment);
                         fragmentTransaction1.addToBackStack(null);
                         fragmentTransaction1.commit();
-
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(),"Maybe connect to internet and try again",3000).show();
                     }
                 });
+
             }
 
 

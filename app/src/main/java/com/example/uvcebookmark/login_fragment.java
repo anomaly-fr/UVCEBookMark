@@ -4,6 +4,7 @@ package com.example.uvcebookmark;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,7 +19,10 @@ import android.widget.Toast;
 
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 
 /**
@@ -28,6 +32,7 @@ public class login_fragment extends Fragment {
    private  TextView registerTextView, passwordTextView;
    private Button loginButton;
    private EditText registerNoEditText, passwordEditText;
+   CollectionReference collectionReference=FirebaseFirestore.getInstance().collection("Users");
  //  CollectionReference refer = database.collection("users");
 
 
@@ -80,11 +85,24 @@ public class login_fragment extends Fragment {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(registerNoEditText.getText().toString().trim().equals("") || passwordEditText.getText().toString().trim().equals(""))
-                    Toast.makeText(getContext(),"Enter register number and password",Toast.LENGTH_SHORT).show();
-                else{
+                if (!registerNoEditText.getText().toString().isEmpty() && !passwordEditText.getText().toString().isEmpty()) {
+                    collectionReference.document(registerNoEditText.getText().toString().trim()).addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                        @Override
+                        public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                            try {
+                                if (documentSnapshot.get("password").toString().equals(passwordEditText.getText().toString()))
+                                    startActivity(new Intent(getContext(), MainPage.class));
+                                else
+                                    Toast.makeText(getContext(),"Meh wrong password",3000).show();
+                            }
+                            catch (NullPointerException me){
+                                Toast.makeText(getContext(),"Please enter a valid registration number",3000).show();
+                            }
+                        }
+                    });
 
-
+                } else {
+                    Toast.makeText(getContext(),"Do not leave the fields blank",Toast.LENGTH_SHORT).show();
                 }
 
 

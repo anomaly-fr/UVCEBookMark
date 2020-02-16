@@ -8,8 +8,8 @@
     <string name="register"><u>New user? Register</u></string>
     <string name="register_registerFrag">Register:</string>
     <string name="forgot_password"><u>Forgot password?</u></string>
-    <string name="name"><u>Name:</u></string>
-    <string name="set_password"><u>Set password:</u></string>
+    <string name="name">Name:</string>
+    <string name="set_password">Set password:</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="enter_e_mail_address">Contact Number:</string>
 </resources>

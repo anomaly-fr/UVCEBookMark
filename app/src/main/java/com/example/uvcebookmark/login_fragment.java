@@ -12,7 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 /**
@@ -21,6 +27,9 @@ import android.widget.TextView;
 public class login_fragment extends Fragment {
    private  TextView registerTextView, passwordTextView;
    private Button loginButton;
+   private EditText registerNoEditText, passwordEditText;
+ //  CollectionReference refer = database.collection("users");
+
 
 
 
@@ -65,6 +74,23 @@ public class login_fragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
+        loginButton = view.findViewById(R.id.login_button);
+        registerNoEditText = view.findViewById(R.id.reg_ET);
+        passwordEditText = view.findViewById(R.id.password_ET);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(registerNoEditText.getText().toString().trim().equals("") || passwordEditText.getText().toString().trim().equals(""))
+                    Toast.makeText(getContext(),"Enter register number and password",Toast.LENGTH_SHORT).show();
+                else{
+
+
+                }
+
+
+            }
+        });
+
         return view;
 
 

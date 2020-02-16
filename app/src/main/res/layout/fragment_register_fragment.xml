@@ -16,26 +16,28 @@
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.061" />
+        app:layout_constraintVertical_bias="0.114" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="363dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="36dp"
+
         android:background="@drawable/registration_rectangle"
         android:orientation="vertical"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
+
+
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442">
+        app:layout_constraintVertical_bias="0.399">
 
         <TextView
             android:layout_width="wrap_content"
@@ -72,9 +74,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/entry"
+            android:inputType="number"
             android:padding="5dp"
-            android:textColor="@android:color/white"
-            android:inputType="number"/>
+            android:textColor="@android:color/white" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -87,6 +89,7 @@
             android:textSize="25sp" />
 
         <EditText
+            android:id="@+id/regNo_ET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -95,7 +98,7 @@
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/regNo_ET"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"

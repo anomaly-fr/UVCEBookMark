@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        login_fragment l_fragment = new login_fragment();
-        register_fragment r_fragment=new register_fragment();
+        LoginFragment l_fragment = new LoginFragment();
+        RegisterFragment r_fragment=new RegisterFragment();
         fragmentTransaction.replace(R.id.frame,l_fragment).commit();//replace by rfragmnet here
 
     }

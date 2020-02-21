@@ -6,7 +6,6 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
@@ -18,7 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -28,7 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class login_fragment extends Fragment {
+public class LoginFragment extends Fragment {
    private  TextView registerTextView, passwordTextView;
    private Button loginButton;
    private EditText registerNoEditText, passwordEditText;
@@ -39,7 +37,7 @@ public class login_fragment extends Fragment {
 
 
 
-    public login_fragment() {
+    public LoginFragment() {
         // Required empty public constructor
     }
 
@@ -56,7 +54,7 @@ public class login_fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 registerTextView.setTextColor(getResources().getColor(R.color.Purple));
-                // To register_fragment
+                // To RegisterFragment
             }
         });
         passwordTextView = view.findViewById(R.id.forgot_password_TV);
@@ -71,7 +69,7 @@ public class login_fragment extends Fragment {
         registerTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment registerFragment = new register_fragment();
+                Fragment registerFragment = new RegisterFragment();
 
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.frame,registerFragment);
@@ -93,7 +91,7 @@ public class login_fragment extends Fragment {
                                 if (documentSnapshot.get("password").toString().equals(passwordEditText.getText().toString()))
                                     startActivity(new Intent(getContext(), MainPage.class));
                                 else
-                                    Toast.makeText(getContext(),"Meh wrong password",3000).show();
+                                    Toast.makeText(getContext(),"Password Incorrect",3000).show();
                             }
                             catch (NullPointerException me){
                                 Toast.makeText(getContext(),"Please enter a valid registration number",3000).show();
@@ -102,7 +100,7 @@ public class login_fragment extends Fragment {
                     });
 
                 } else {
-                    Toast.makeText(getContext(),"Do not leave the fields blank",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"All fields are compulsory",Toast.LENGTH_SHORT).show();
                 }
 
 

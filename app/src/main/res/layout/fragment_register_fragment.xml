@@ -13,20 +13,20 @@
         android:fontFamily="@font/days_one"
         android:text="@string/register_registerFrag"
         android:textColor="@android:color/white"
-        android:textSize="50sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.045" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-
+        android:layout_margin="15dp"
         android:background="@drawable/registration_rectangle"
         android:orientation="vertical"
         android:padding="10dp"
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:fontFamily="@font/roboto_black"
+            android:fontFamily="@font/roboto_medium"
             android:padding="5dp"
             android:text="@string/name"
             android:textColor="@android:color/white"
@@ -51,6 +51,9 @@
 
         <EditText
             android:id="@+id/name_ET"
+            android:nextFocusDown="@id/contact_ET"
+            android:inputType="text"
+            android:imeOptions="actionNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -62,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:fontFamily="@font/roboto_black"
+            android:fontFamily="@font/roboto_medium"
             android:padding="5dp"
             android:text="@string/enter_e_mail_address"
             android:textColor="@android:color/white"
@@ -70,6 +73,7 @@
 
         <EditText
             android:id="@+id/contact_ET"
+            android:nextFocusDown="@id/regNo_ET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -81,20 +85,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_marginLeft="5dp"
-            android:fontFamily="@font/roboto_black"
+            android:fontFamily="@font/roboto_medium"
             android:padding="5dp"
-            android:text="@string/registration_no"
+            android:text="@string/registration_number"
             android:textColor="@android:color/white"
             android:textSize="25sp" />
 
         <EditText
             android:id="@+id/regNo_ET"
+            android:nextFocusDown="@id/setPassword_ET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/entry"
             android:padding="5dp"
+            android:inputType="text"
+            android:imeOptions="actionNext"
             android:textColor="@android:color/white" />
 
         <TextView
@@ -102,9 +110,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:fontFamily="@font/roboto_black"
+            android:fontFamily="@font/roboto_medium"
             android:padding="5dp"
-            android:text="@string/set_password"
+            android:text="@string/password_word"
             android:textColor="@android:color/white"
             android:textSize="25sp" />
 
@@ -116,21 +124,30 @@
             android:background="@drawable/entry"
             android:inputType="textPassword"
             android:padding="5dp"
+            android:imeOptions="actionGo"
             android:textColor="@android:color/white" />
+
+
     </LinearLayout>
+
 
     <Button
         android:id="@+id/registered_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button"
+        android:background="@drawable/button_states"
         android:text="@string/lets_go"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.633"
+
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

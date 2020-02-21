@@ -23,6 +23,7 @@
         android:layout_height="92dp"
         android:fontFamily="@font/days_one"
         android:text="@string/login"
+
         android:textColor="@android:color/white"
 
 
@@ -40,6 +41,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:background="@drawable/entry"
+        android:textColor="@android:color/white"
+        android:nextFocusDown="@id/password_ET"
+        android:inputType="text"
+        android:imeOptions="actionNext"
 
         android:fontFamily="@font/roboto_medium"
         android:hint="@string/registration_no"
@@ -69,6 +74,10 @@
         android:paddingTop="5dp"
         android:textColorHint="@color/GreyWhite"
         android:textSize="20dp"
+        android:imeOptions="actionDone"
+
+        android:textColor="@android:color/white"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +87,7 @@
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button"
+        android:background="@drawable/button_states"
         android:padding="2dp"
         android:text="@string/lets_go"
         android:textAllCaps="false"

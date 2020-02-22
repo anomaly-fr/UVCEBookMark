@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    android:layout_marginBottom="10dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/subject_TV"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+           android:layout_marginLeft="300dp"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/subject_tag"
+            android:fontFamily="@font/roboto_black"
+            android:padding="5dp"
+            android:text="SUBJECT"
+            android:textAlignment="center"
+            android:textColor="@color/White"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/book_image"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/openn"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/card_TV1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@id/book_image"
+            android:fontFamily="@font/montserrat"
+            android:text="Name of book 1"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/card_TV2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_TV1"
+            android:layout_marginStart="1dp"
+
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@id/book_image"
+            android:fontFamily="@font/montserrat"
+            android:text="Description 1"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

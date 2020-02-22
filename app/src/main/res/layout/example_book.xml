@@ -48,7 +48,7 @@
             android:layout_toEndOf="@id/book_image"
             android:fontFamily="@font/montserrat"
             android:text="Name of book 1"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatTextView

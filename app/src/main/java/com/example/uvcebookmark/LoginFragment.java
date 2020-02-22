@@ -83,6 +83,7 @@ public class LoginFragment extends Fragment {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (!registerNoEditText.getText().toString().isEmpty() && !passwordEditText.getText().toString().isEmpty()) {
                     collectionReference.document(registerNoEditText.getText().toString().trim()).addSnapshotListener(new EventListener<DocumentSnapshot>() {
                         @Override
@@ -106,6 +107,7 @@ public class LoginFragment extends Fragment {
 
             }
         });
+
 
         return view;
 

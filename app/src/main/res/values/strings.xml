@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UVCE BookMark</string>
+    <string name="app_name">Dusty</string>
     <string name="welcome">Welcome to UVCE BookMark</string>
     <string name="login">Login:</string>
     <string name="registration_no">Enter registration number:</string>
@@ -15,4 +15,11 @@
     <string name="registration_number">Registration number:</string>
     <string name="password_word">Password:</string>
     <string name="branch_and_year">Branch and Year</string>
+    <string name="you">You</string>
+    <string name="add_a_book">Add a book</string>
+    <string name="virtual_library">Virtual Library</string>
+    <string name="play_snake_game">Play Snake Game</string>
+    <string name="dark_mode">Dark mode</string>
+    <string name="navigation_draw_open">Open Navigation Drawer</string>
+    <string name="navigation_draw_close">Close Navigation Drawer</string>
 </resources>

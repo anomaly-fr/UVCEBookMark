@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_navigation_drawer">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/profile_nav"
+            android:icon="@drawable/ic_account_circle"
+            android:title="@string/you" />
+        <item
+            android:id="@+id/addbook_nav"
+            android:icon="@drawable/ic_library_add"
+            android:title="@string/add_a_book" />
+        <item
+            android:id="@+id/viewlibrary_nav"
+            android:icon="@drawable/ic_map"
+            android:title="@string/virtual_library" />
+        <item
+            android:id="@+id/play_nav"
+            android:icon="@drawable/ic_videogame"
+            android:title="@string/play_snake_game" />
+
+
+    </group>
+
+    <item
+        android:id="@+id/darmode_nav"
+        android:icon="@drawable/ic_brightness_low"
+        android:title="@string/dark_mode" />
+
+</menu>

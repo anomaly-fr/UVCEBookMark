@@ -4,10 +4,10 @@
     <corners
         android:radius="10dp"
         />
-    <stroke
-        android:color="@android:color/white"
-        android:width="1dp"
+    <gradient
+        android:angle="45"
+        android:endColor="#6D45E7"
+        android:startColor="#8928C4"
         />
-
 
 </shape>

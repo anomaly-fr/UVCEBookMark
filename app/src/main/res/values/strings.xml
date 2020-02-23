@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Dusty</string>
-    <string name="welcome">Welcome to UVCE BookMark</string>
+    <string name="app_name">Dusty Library Guide</string>
+    <string name="welcome">Welcome</string>
     <string name="login">Login:</string>
     <string name="registration_no">Enter registration number:</string>
     <string name="password">Enter password:</string>

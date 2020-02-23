@@ -4,12 +4,13 @@
   <color name="Pink">#f67280</color>
   <color name="DarkBlue">#050A2C</color>
   <color name="Purple">#3E0466</color>
-  <color name="LPurple">#610E85</color>
-  <color name="DPurple">#230330</color>
+  <color name="LPurple">#46268A</color>
+  <color name="DPurple">#1A0741</color>
   <color name="GreyWhite">#A0A5AA</color>
-  <color name="Grad1">#734b6d</color>
+  <color name="Grad1">#757DAA</color>
   <color name="Grad2">#42275a</color>
   <color name="White">#FFFFFF</color>
+
 
 
 </resources>

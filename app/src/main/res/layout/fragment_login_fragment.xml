@@ -85,8 +85,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="109dp"
+        android:layout_height="43dp"
         android:background="@drawable/button_states"
         android:padding="2dp"
         android:text="@string/lets_go"

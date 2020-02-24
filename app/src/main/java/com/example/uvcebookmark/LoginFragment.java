@@ -89,8 +89,10 @@ public class LoginFragment extends Fragment {
                         @Override
                         public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                             try {
-                                if (documentSnapshot.get("password").toString().equals(passwordEditText.getText().toString()))
-                                    startActivity(new Intent(getContext(), MainPage.class));
+                                if (documentSnapshot.get("password").toString().equals(passwordEditText.getText().toString())) {
+                                    Intent intent =new Intent(getContext(),MainPage.class);
+                                    startActivity(intent);
+                                }
                                 else
                                     Toast.makeText(getContext(),"Password Incorrect",3000).show();
                             }

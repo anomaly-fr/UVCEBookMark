@@ -43,6 +43,12 @@ public class BoardView extends View {
 	Collection<Node> board = new LinkedHashSet<Node>();
 	boolean boardCreated = false;
 
+	public String location="";
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
 	public BoardView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		customHandler = new Handler();
@@ -82,6 +88,8 @@ public class BoardView extends View {
 				canvas.drawRect(i,j,i+width,j+endWidth/8,paint);
 			}
 		}
+		if (location.equals("lol"))
+			canvas.drawRect(0,0,width,height,paint);
 		paint.reset();
 
 

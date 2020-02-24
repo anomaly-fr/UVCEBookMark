@@ -23,5 +23,6 @@ public class BoardActivity extends Activity  {
 				boardView.setDirection(Direction.DOWN);
 			}
 		});
+		boardView.setLocation(getIntent().getStringExtra("location"));
 	}
 }
